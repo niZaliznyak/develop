@@ -24,7 +24,7 @@ export const Modal: React.FC<ModalProps> = ({
         onOverlayClick={onOverlayClick}
         visible={visible}
         containerClasses={cn(
-            "bg-white min-w-550p rounded-lg p-5 pb-30p no-scrollbar",
+            "bg-white min-w-550p max-w-screen-sm rounded-xl p-11 pb-30p no-scrollbar",
             className
         )}
     >

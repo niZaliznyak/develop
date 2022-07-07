@@ -4,10 +4,10 @@ import { forwardRef } from "react";
 type ButtonProps = {
     onClick?: React.HTMLProps<HTMLButtonElement>["onClick"];
     variant?:
-        | "primary"
-        | "secondary"
-        | "ghost"
-        | "accent"
+    | "primary"
+    | "secondary"
+    | "ghost"
+    | "accent"
     className?: string;
     isDisabled?: boolean;
     form?: string;
@@ -34,14 +34,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         const hasTextSize = className?.includes("text");
 
         const classes = cn(
-            "w-full font-semibold",
+            "w-full font-bold w-40 h-9",
             {
-                "bg-accent hover:bg-accent1 disabled:bg-accent2 text-gray-0 transition-colors":
+                "transition-colors text-white bg-sky-500 hover:bg-sky-600":
                     isPrimary,
-                "text-black border border-accent2 hover:border-accent disabled:border-border disabled:text-gray-2":
+                "bg-none hover:bg-slate-200":
                     isGhost,
-
-                "flex justify-center items-center h-58p rounded-20p": !isAccent,
+                "flex justify-center items-center": !isAccent,
                 "text-16": !hasTextSize && !isAccent,
                 "text-14": !hasTextSize && isAccent
             },
